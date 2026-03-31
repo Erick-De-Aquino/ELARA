@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Day - Elara Transporte</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/5.svg" alt="Elara Transporte">
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </button>
+            <nav class="nav" id="mainNav">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../index.html#servicios">Servicios</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="../index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal del servicio -->
+    <main class="servicio-detalle">
+        <div class="container">
+            <div class="servicio-header">
+                <div class="servicio-icono">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="servicio-info">
+                    <h1>Servicio Full Day</h1>
+                    <p class="servicio-subtitle">Tu chofer particular por horas, sin límite de paradas</p>
+                </div>
+            </div>
+
+            <div class="servicio-content">
+                <div class="servicio-descripcion">
+                    <h2>¿En qué consiste?</h2>
+                    <p>
+                        El servicio <strong>Full Day</strong> está diseñado para quienes necesitan un vehículo privado con conductor 
+                        durante varias horas, realizando múltiples paradas en diferentes lugares. Ideal para jornadas de compras, 
+                        visitas familiares, trámites administrativos, recorridos turísticos personalizados o cualquier actividad 
+                        que requiera movilidad continua durante el día.
+                    </p>
+                    <p>
+                        Dispones del vehículo y conductor por el tiempo contratado, pudiendo realizar todas las paradas que necesites 
+                        dentro de un radio de <strong>40 km alrededor de Valencia</strong>. Para recorridos mayores, se combina con 
+                        tarifa de larga distancia. Combustible y peajes incluidos.
+                    </p>
+
+                    <h2>Características</h2>
+                    <ul class="ventajas-list">
+                        <li><i class="fas fa-check-circle"></i> <strong>Mínimo 4 horas</strong> de contratación</li>
+                        <li><i class="fas fa-check-circle"></i> Tarifa aproximada: <strong>20€/hora</strong> (consultar disponibilidad)</li>
+                        <li><i class="fas fa-check-circle"></i> Combustible y peajes <strong>incluidos</strong></li>
+                        <li><i class="fas fa-check-circle"></i> Radio de <strong>40 km</strong> alrededor de Valencia</li>
+                        <li><i class="fas fa-check-circle"></i> Sin límite de paradas durante el servicio</li>
+                        <li><i class="fas fa-check-circle"></i> Vehículo a tu disposición durante todo el tiempo contratado</li>
+                        <li><i class="fas fa-check-circle"></i> Conductor profesional con conocimiento de la ciudad</li>
+                        <li><i class="fas fa-check-circle"></i> Flexibilidad para modificar el itinerario sobre la marcha</li>
+                    </ul>
+
+                    <div class="servicio-cta">
+                        <button class="btn btn-large" id="abrirFormulario">
+                            <i class="fas fa-calendar-check"></i> Contratar servicio
+                        </button>
+                        <p class="precio-nota">Mínimo 4 horas - Combustible y peajes incluidos - Consulte tarifa exacta</p>
+                    </div>
+                </div>
+
+                <div class="servicio-imagen">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Día de actividades y viajes">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navegación entre servicios -->
+        <div class="navegacion-servicios">
+            <h3>Explora nuestros servicios</h3>
+            <div class="servicios-navegacion">
+                <a href="servicioPAP.html" class="btn-servicio-nav">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Punto a punto</span>
+                </a>
+                <a href="servicioLD.html" class="btn-servicio-nav">
+                    <i class="fas fa-road"></i>
+                    <span>Larga distancia</span>
+                </a>
+                <a href="servicioPeriodico.html" class="btn-servicio-nav">
+                    <i class="fas fa-calendar-day"></i>
+                    <span>Servicio periódico</span>
+                </a>
+                <a href="servicioFullDay.html" class="btn-servicio-nav activo">
+                    <i class="fas fa-clock"></i>
+                    <span>Full day</span>
+                </a>
+                <a href="servicioTurismo.html" class="btn-servicio-nav">
+                    <i class="fas fa-landmark"></i>
+                    <span>Servicio turismo</span>
+                </a>
+                <a href="servicioAero.html" class="btn-servicio-nav">
+                    <i class="fas fa-plane"></i>
+                    <span>Traslado aeropuerto</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal del formulario -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Solicitar servicio: Full Day</h2>
+                <button class="cerrar-modal" id="cerrarModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="formularioServicio">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" required placeholder="Ej: Juan Pérez">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono *</label>
+                        <input type="tel" id="telefono" required placeholder="Ej: +34 612 345 678">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" required placeholder="Ej: juan@email.com">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fecha">Fecha del servicio *</label>
+                            <input type="date" id="fecha" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hora-inicio">Hora de inicio *</label>
+                            <input type="time" id="hora-inicio" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="horas">Número de horas * (mínimo 4)</label>
+                            <select id="horas" required>
+                                <option value="" disabled selected>Seleccione</option>
+                                <option value="4">4 horas</option>
+                                <option value="5">5 horas</option>
+                                <option value="6">6 horas</option>
+                                <option value="7">7 horas</option>
+                                <option value="8">8 horas</option>
+                                <option value="9">9 horas</option>
+                                <option value="10">10 horas</option>
+                                <option value="11">11 horas</option>
+                                <option value="12">12 horas</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pasajeros">Nº de pasajeros *</label>
+                            <select id="pasajeros" required>
+                                <option value="" disabled selected>Seleccione</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5+">5 o más</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="punto-partida">Punto de partida *</label>
+                        <input type="text" id="punto-partida" required placeholder="Ej: Calle Mayor, 123, Valencia">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itinerario">Itinerario / Lugares a visitar *</label>
+                        <textarea id="itinerario" rows="4" required placeholder="Ej: 10:00 - Centro comercial El Saler, 13:00 - Comida en restaurante X, 15:00 - Visita a familiares en..."></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="radio-viaje">Radio estimado del recorrido</label>
+                            <select id="radio-viaje">
+                                <option value="" selected>Seleccione</option>
+                                <option value="menos40">Menos de 40 km (tarifa Full Day)</option>
+                                <option value="mas40">Más de 40 km (consultar combinación con larga distancia)</option>
+                                <option value="nolo-se">No lo sé / A consultar</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehiculo">Tipo de vehículo preferido</label>
+                            <select id="vehiculo">
+                                <option value="" selected>Cualquiera</option>
+                                <option value="sedan">Sedán ejecutivo</option>
+                                <option value="suv">SUV premium</option>
+                                <option value="van">Van (más de 4 pasajeros)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="necesidades">Necesidades especiales</label>
+                        <textarea id="necesidades" rows="3" placeholder="Ej: Silla de bebé, espacio para equipaje grande, accesibilidad, etc."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comentarios">Comentarios adicionales</label>
+                        <textarea id="comentarios" rows="3" placeholder="Información adicional que debamos conocer..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required name="privacidad">
+                            He leído y acepto la <a href="privacidad.html" target="_blank">Política de Privacidad</a> *
+                        </label>
+                    </div>
+
+                    <div class="form-footer">
+                        <button type="submit" class="btn btn-enviar">
+                            <i class="fas fa-paper-plane"></i> Enviar solicitud
+                        </button>
+                        <button type="button" class="btn btn-secundario" id="cancelarForm">
+                            Cancelar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../assets/logo-elara.png" alt="Elara">
+                    <p>Transporte ejecutivo de calidad superior.</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-phone"></i> +34 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> info@elara-transporte.com</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Elara Transporte Ejecutivo. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/scriptServFD.js"></script>
+</body>
+</html>
