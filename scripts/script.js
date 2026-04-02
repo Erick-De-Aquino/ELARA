@@ -116,7 +116,7 @@ const servicios = [
         icono: "fa-dog",
         desc: "Transporte de mascotas con comodidad y seguridad.",
         color: "#1C4D8D",
-        enlace: "pages/servicioMascotas.html"
+        enlace: "pages/servicioPET.html"
     }
 ];
 
