@@ -109,7 +109,6 @@ const servicios = [
         color: "#1C4D8D",
         enlace: "pages/servicioAero.html"
     },
-    
     {
         id: 7,
         nombre: "Traslado mascotas",
