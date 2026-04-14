@@ -54,7 +54,6 @@ dots.forEach((dot, idx) => {
 });
 
 // Auto-slide cada 5 segundos
-
 setInterval(() => {
     currentSlide++;
     showSlide(currentSlide);
