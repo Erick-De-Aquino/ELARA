@@ -287,106 +287,108 @@ document.addEventListener('DOMContentLoaded', function() {
     const formulario = document.getElementById('formularioServicio');
 
     // Generar campos específicos del servicio
-function generarCamposEspecificos() {
-    const config = configFormularios[servicioActual];
-    if (!config || !formulario) return;
+    function generarCamposEspecificos() {
+        const config = configFormularios[servicioActual];
+        if (!config || !formulario) return;
 
-    // Limpiar campos existentes si los hay
-    const existentes = formulario.querySelector('.campos-especificos');
-    if (existentes) existentes.remove();
+        // Limpiar campos existentes si los hay
+        const existentes = formulario.querySelector('.campos-especificos');
+        if (existentes) existentes.remove();
 
-    const camposContainer = document.createElement('div');
-    camposContainer.className = 'campos-especificos';
-    camposContainer.innerHTML = '<h3>Detalles específicos del servicio</h3>';
+        const camposContainer = document.createElement('div');
+        camposContainer.className = 'campos-especificos';
+        /*
+        camposContainer.innerHTML = '<h3>Detalles específicos del servicio</h3>';
 
-    config.camposEspecificos.forEach(campo => {
-        const div = document.createElement('div');
-        div.className = 'form-group campo-especifico';
+        config.camposEspecificos.forEach(campo => {
+            const div = document.createElement('div');
+            div.className = 'form-group campo-especifico';
 
-        const label = document.createElement('label');
-        label.htmlFor = campo.id;
-        label.textContent = campo.label;
+            const label = document.createElement('label');
+            label.htmlFor = campo.id;
+            label.textContent = campo.label;
 
-        let input;
-        
-        if (campo.tipo === 'select') {
-            input = document.createElement('select');
-            input.id = campo.id;
-            input.name = campo.id;
-            if (campo.requerido) input.required = true;
+            let input;
             
-            const opcionDefault = document.createElement('option');
-            opcionDefault.value = "";
-            opcionDefault.textContent = "-- Seleccione --";
-            opcionDefault.disabled = true;
-            opcionDefault.selected = true;
-            input.appendChild(opcionDefault);
-            
-            campo.opciones.forEach(op => {
-                const option = document.createElement('option');
-                option.value = op.valor;
-                option.textContent = op.texto;
-                input.appendChild(option);
-            });
-        } 
-        else if (campo.tipo === 'textarea') {
-            input = document.createElement('textarea');
-            input.id = campo.id;
-            input.name = campo.id;
-            input.rows = campo.filas || 3;
-            if (campo.placeholder) input.placeholder = campo.placeholder;
-            if (campo.requerido) input.required = true;
-        }
-        else if (campo.tipo === 'checkbox') {
-            const labelCheck = document.createElement('label');
-            labelCheck.className = 'checkbox-label';
-            
-            input = document.createElement('input');
-            input.type = 'checkbox';
-            input.id = campo.id;
-            input.name = campo.id;
-            
-            const span = document.createElement('span');
-            span.textContent = campo.texto || '';
-            
-            labelCheck.appendChild(input);
-            labelCheck.appendChild(span);
-            div.appendChild(labelCheck);
+            if (campo.tipo === 'select') {
+                input = document.createElement('select');
+                input.id = campo.id;
+                input.name = campo.id;
+                if (campo.requerido) input.required = true;
+                
+                const opcionDefault = document.createElement('option');
+                opcionDefault.value = "";
+                opcionDefault.textContent = "-- Seleccione --";
+                opcionDefault.disabled = true;
+                opcionDefault.selected = true;
+                input.appendChild(opcionDefault);
+                
+                campo.opciones.forEach(op => {
+                    const option = document.createElement('option');
+                    option.value = op.valor;
+                    option.textContent = op.texto;
+                    input.appendChild(option);
+                });
+            } 
+            else if (campo.tipo === 'textarea') {
+                input = document.createElement('textarea');
+                input.id = campo.id;
+                input.name = campo.id;
+                input.rows = campo.filas || 3;
+                if (campo.placeholder) input.placeholder = campo.placeholder;
+                if (campo.requerido) input.required = true;
+            }
+            else if (campo.tipo === 'checkbox') {
+                const labelCheck = document.createElement('label');
+                labelCheck.className = 'checkbox-label';
+                
+                input = document.createElement('input');
+                input.type = 'checkbox';
+                input.id = campo.id;
+                input.name = campo.id;
+                
+                const span = document.createElement('span');
+                span.textContent = campo.texto || '';
+                
+                labelCheck.appendChild(input);
+                labelCheck.appendChild(span);
+                div.appendChild(labelCheck);
+                camposContainer.appendChild(div);
+                return;
+            }
+            else {
+                input = document.createElement('input');
+                input.type = campo.tipo;
+                input.id = campo.id;
+                input.name = campo.id;
+                if (campo.placeholder) input.placeholder = campo.placeholder;
+                if (campo.requerido) input.required = true;
+                if (campo.min !== undefined) input.min = campo.min;
+                if (campo.max !== undefined) input.max = campo.max;
+            }
+
+            div.appendChild(label);
+            if (campo.tipo !== 'checkbox') div.appendChild(input);
             camposContainer.appendChild(div);
-            return;
-        }
-        else {
-            input = document.createElement('input');
-            input.type = campo.tipo;
-            input.id = campo.id;
-            input.name = campo.id;
-            if (campo.placeholder) input.placeholder = campo.placeholder;
-            if (campo.requerido) input.required = true;
-            if (campo.min !== undefined) input.min = campo.min;
-            if (campo.max !== undefined) input.max = campo.max;
-        }
+        });
+        */
 
-        div.appendChild(label);
-        if (campo.tipo !== 'checkbox') div.appendChild(input);
-        camposContainer.appendChild(div);
-    });
-
-    // 🔴 PARTE CORREGIDA: Buscar el checkbox en lugar del footer
-    const checkboxGroup = formulario.querySelector('.checkbox-label')?.closest('.form-group');
-    
-    if (checkboxGroup) {
-        // Insertar los campos específicos ANTES del checkbox
-        formulario.insertBefore(camposContainer, checkboxGroup);
-        console.log('Campos insertados antes del checkbox');
-    } else {
-        // Fallback: insertar antes del footer
-        const formFooter = formulario.querySelector('.form-footer');
-        if (formFooter) {
-            formulario.insertBefore(camposContainer, formFooter);
-            console.log('Campos insertados antes del footer (fallback)');
+        // 🔴 PARTE CORREGIDA: Buscar el checkbox en lugar del footer
+        const checkboxGroup = formulario.querySelector('.checkbox-label')?.closest('.form-group');
+        
+        if (checkboxGroup) {
+            // Insertar los campos específicos ANTES del checkbox
+            formulario.insertBefore(camposContainer, checkboxGroup);
+            console.log('Campos insertados antes del checkbox');
+        } else {
+            // Fallback: insertar antes del footer
+            const formFooter = formulario.querySelector('.form-footer');
+            if (formFooter) {
+                formulario.insertBefore(camposContainer, formFooter);
+                console.log('Campos insertados antes del footer (fallback)');
+            }
         }
     }
-}
 
     // Abrir modal
     if (abrirFormularioBtn) {

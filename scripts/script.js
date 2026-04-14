@@ -54,10 +54,11 @@ dots.forEach((dot, idx) => {
 });
 
 // Auto-slide cada 5 segundos
+
 setInterval(() => {
     currentSlide++;
     showSlide(currentSlide);
-}, 5000);
+}, 4000);
 
 // Datos de servicios con enlaces CORREGIDOS
 const servicios = [
