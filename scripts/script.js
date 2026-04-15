@@ -92,7 +92,7 @@ const servicios = [
         desc: "Chofer disponible todo el día para múltiples destinos.",
         color: "#4D4D4D",
         enlace: "pages/servicioFD.html"
-    },
+    },/*
     {
         id: 5,
         nombre: "Servicio turismo",
@@ -100,7 +100,7 @@ const servicios = [
         desc: "Tours por atracciones turísticas y gastronómicas.",
         color: "#ACBAC4",
         enlace: "pages/servicio-5.html"
-    },
+    },*/
     {
         id: 6,
         nombre: "Traslado aeropuerto",
