@@ -53,8 +53,7 @@ body {
 .logo img {
     display: flex;
     align-items: center;
-    margin-top: 10px;
-    height: 150px;
+    height: 50px;
     width: auto;
 }
 
