@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let aeropuertoTexto = '';
             switch(aeropuertoSelect.value) {
                 case 'vlc': aeropuertoTexto = 'Valencia (VLC)'; break;
+                case 'cdt': aeropuertoTexto = 'Castellon (CDT)'; break;
                 case 'alc': aeropuertoTexto = 'Alicante (ALC)'; break;
                 case 'mad': aeropuertoTexto = 'Madrid-Barajas (MAD)'; break;
                 case 'bcn': aeropuertoTexto = 'Barcelona-El Prat (BCN)'; break;
