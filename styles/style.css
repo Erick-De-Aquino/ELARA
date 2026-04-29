@@ -1175,6 +1175,116 @@ body {
     padding: 16px 40px;
 }
 
+/* ===== PÁGINA CONTACTO ===== */
+.contacto-hero {
+    text-align: center;
+    padding: 60px 0 40px;
+}
+
+.contacto-hero h1 {
+    font-size: 2.8rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 15px;
+}
+
+.contacto-hero .g {
+    color: var(--color-primary);
+}
+
+.contacto-hero p {
+    font-size: 1.2rem;
+    color: var(--color-gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 40px 0 60px;
+}
+
+.contacto-formulario h2,
+.contacto-info h2 {
+    color: var(--color-primary-dark);
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.contacto-info {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: var(--border-radius);
+}
+
+.info-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+.info-item i {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    min-width: 40px;
+    margin-top: 5px;
+}
+
+.info-item h3 {
+    color: var(--color-primary-dark);
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.info-item p {
+    color: var(--color-gray);
+    margin-bottom: 5px;
+}
+
+.info-item small {
+    color: var(--color-secondary);
+    font-size: 0.8rem;
+}
+
+.contacto-redes {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.contacto-redes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.contacto-redes a:hover {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 992px) {
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacto-hero h1 { font-size: 2rem; }
+}
+
 @media (max-width: 992px) {
     .historia-grid {
         grid-template-columns: 1fr;
