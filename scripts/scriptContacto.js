@@ -1,8 +1,8 @@
 // scriptContacto.js - Enviar formulario con EmailJS
 
-// Inicializar EmailJS con tu Public Key
+// Inicializar EmailJS
 (function() {
-    emailjs.init("AQUI_TU_PUBLIC_KEY"); // ← PON AQUÍ TU CLAVE
+    emailjs.init("4zY3yYumPpcZkQJNc"); // ← Reemplaza con tu Public Key
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -38,11 +38,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Preparar datos para EmailJS
             const templateParams = {
-                nombre: document.getElementById('nombre').value,
+                title: "Nuevo mensaje de contacto",
+                name: document.getElementById('nombre').value,
                 email: document.getElementById('email').value,
                 telefono: document.getElementById('telefono').value,
                 asunto: document.getElementById('asunto').value,
-                mensaje: document.getElementById('mensaje').value
+                time: new Date().toLocaleString(),
+                message: document.getElementById('mensaje').value
             };
 
             // Enviar usando EmailJS
@@ -51,8 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             botonEnviar.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
             botonEnviar.disabled = true;
 
-            // AQUÍ TU SERVICE ID Y TEMPLATE ID
-            emailjs.send('AQUI_TU_SERVICE_ID', 'AQUI_TU_TEMPLATE_ID', templateParams)
+            emailjs.send("service_9dwxsjt", "template_trfdrhn", templateParams)
                 .then(function(response) {
                     console.log('Email enviado:', response);
                     alert('✅ Mensaje enviado correctamente. Te responderemos en menos de 24 horas.');
@@ -60,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
                 .catch(function(error) {
                     console.error('Error al enviar:', error);
-                    alert('❌ Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo o contáctanos directamente por WhatsApp.');
+                    alert('❌ Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.');
                 })
                 .finally(function() {
                     botonEnviar.innerHTML = textoOriginal;
