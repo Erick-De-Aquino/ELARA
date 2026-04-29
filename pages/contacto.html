@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Elara Transporte</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon-circle.svg">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/5.svg" alt="Elara Transporte">
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </button>
+            <nav class="nav" id="mainNav">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../index.html#servicios">Servicios</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="../pages/contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="contacto-hero">
+                <h1>Contacta con <span class="g">Elara</span></h1>
+                <p>Estamos aquí para ayudarte. Cuéntanos qué necesitas y te responderemos lo antes posible.</p>
+            </div>
+
+            <div class="contacto-grid">
+                <!-- Formulario -->
+                <div class="contacto-formulario">
+                    <h2>Envíanos un mensaje</h2>
+                    <form id="formularioContacto">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" required placeholder="Ej: Juan Pérez">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" required placeholder="Ej: juan@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" placeholder="Ej: +34 612 345 678">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="asunto">Asunto *</label>
+                            <select id="asunto" required>
+                                <option value="" disabled selected>Seleccione un motivo</option>
+                                <option value="consulta">Consulta general</option>
+                                <option value="reserva">Solicitar reserva</option>
+                                <option value="presupuesto">Solicitar presupuesto</option>
+                                <option value="colaboracion">Colaboración / Alianza</option>
+                                <option value="incidencia">Incidencia o sugerencia</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje *</label>
+                            <textarea id="mensaje" rows="5" required placeholder="Cuéntanos detalladamente tu consulta..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" required name="privacidad">
+                                He leído y acepto la <a href="privacidad.html" target="_blank">Política de Privacidad</a> *
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-enviar">
+                            <i class="fas fa-paper-plane"></i> Enviar mensaje
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Información de contacto -->
+                <div class="contacto-info">
+                    <h2>Información de contacto</h2>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>+34 123 456 789</p>
+                            <small>Disponible de 8:00 a 22:00</small>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@elara-transporte.com</p>
+                            <p>reservas@elara-transporte.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Horario de atención</h3>
+                            <p>Lunes a Viernes: 8:00 - 22:00</p>
+                            <p>Sábados: 9:00 - 20:00</p>
+                            <p>Domingos: Consultar disponibilidad</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-share-alt"></i>
+                        <div>
+                            <h3>Síguenos en redes</h3>
+                            <div class="contacto-redes">
+                                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                                <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Google Maps (comentado, disponible para futuro) -->
+        <!--
+        <div class="contacto-mapa">
+            <iframe src="https://www.google.com/maps/embed?..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        -->
+    </main>
+
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img class="miniLogo" src="../assets/Elara-sin-fondo-8-mas-logo.svg" alt="Elara">
+                    <p>Transporte ejecutivo de calidad superior.</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-phone"></i> +34 634 85 66 65</p>
+                    <p><i class="fas fa-envelope"></i> elara.transfers@gmail.com</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Elara Transporte Ejecutivo. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/scriptContacto.js"></script>
+</body>
+</html>
