@@ -1266,11 +1266,13 @@ body {
     font-size: 1.2rem;
     transition: var(--transition);
     box-shadow: var(--shadow);
+    text-decoration: none;
 }
 
 .contacto-redes a:hover {
-    background-color: var(--color-primary);
-    color: white;
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
     transform: translateY(-3px);
 }
 
