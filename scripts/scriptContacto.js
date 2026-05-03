@@ -38,13 +38,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Preparar datos para EmailJS
             const templateParams = {
-                title: "Nuevo mensaje de contacto",
                 name: document.getElementById('nombre').value,
                 email: document.getElementById('email').value,
                 telefono: document.getElementById('telefono').value,
                 asunto: document.getElementById('asunto').value,
-                time: new Date().toLocaleString(),
-                message: document.getElementById('mensaje').value
+                message: document.getElementById('mensaje').value,
+                time: new Date().toLocaleString()
             };
 
             // Enviar usando EmailJS
