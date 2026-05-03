@@ -1,31 +1,36 @@
+// script.js - Versión resistente para todas las páginas
+
 // Variables globales
 let currentSlide = 0;
 
-// Menú hamburguesa
+// ========== MENÚ HAMBURGUESA (con verificación de existencia) ==========
 const menuToggle = document.getElementById('menuToggle');
 const mainNav = document.getElementById('mainNav');
 
-menuToggle.addEventListener('click', () => {
-    mainNav.classList.toggle('active');
-    document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
-});
-
-// Cerrar menú al hacer clic en un enlace
-const navLinks = document.querySelectorAll('.nav a');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mainNav.classList.remove('active');
-        document.body.style.overflow = '';
+if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+        document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
     });
-});
 
-// Carrusel
+    // Cerrar menú al hacer clic en un enlace
+    const navLinks = document.querySelectorAll('.nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mainNav.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+}
+
+// ========== CARRUSEL (solo si existe en la página) ==========
 const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.dot');
 const prevBtn = document.querySelector('.carousel-btn.prev');
 const nextBtn = document.querySelector('.carousel-btn.next');
 
 function showSlide(n) {
+    if (!slides.length) return;
     if (n >= slides.length) currentSlide = 0;
     if (n < 0) currentSlide = slides.length - 1;
 
@@ -33,33 +38,40 @@ function showSlide(n) {
     dots.forEach(dot => dot.classList.remove('active'));
 
     slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
+    if (dots[currentSlide]) dots[currentSlide].classList.add('active');
 }
 
-prevBtn.addEventListener('click', () => {
-    currentSlide--;
-    showSlide(currentSlide);
-});
+if (slides.length > 0) {
+    // Inicializar carrusel
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            currentSlide--;
+            showSlide(currentSlide);
+        });
 
-nextBtn.addEventListener('click', () => {
-    currentSlide++;
-    showSlide(currentSlide);
-});
+        nextBtn.addEventListener('click', () => {
+            currentSlide++;
+            showSlide(currentSlide);
+        });
+    }
 
-dots.forEach((dot, idx) => {
-    dot.addEventListener('click', () => {
-        currentSlide = idx;
+    if (dots.length > 0) {
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                currentSlide = idx;
+                showSlide(currentSlide);
+            });
+        });
+    }
+
+    // Auto-slide cada 4 segundos
+    setInterval(() => {
+        currentSlide++;
         showSlide(currentSlide);
-    });
-});
+    }, 4000);
+}
 
-// Auto-slide cada 5 segundos
-setInterval(() => {
-    currentSlide++;
-    showSlide(currentSlide);
-}, 4000);
-
-// Datos de servicios con enlaces CORREGIDOS
+// ========== SERVICIOS (solo si existe el grid) ==========
 const servicios = [
     {
         id: 1, 
@@ -67,7 +79,7 @@ const servicios = [
         icono: "fa-map-marker-alt",
         desc: "Servicio de corta distancia dentro o fuera de Valencia.",
         color: "#1C4D8D",
-        enlace: "pages/servicioPAP.html"  // ENLACE CORREGIDO
+        enlace: "pages/servicioPAP.html"
     },
     {
         id: 2,
@@ -119,7 +131,7 @@ const servicios = [
     }
 ];
 
-// Cargar servicios en el grid con enlaces CORREGIDOS
+// Cargar servicios en el grid
 function cargarServicios() {
     const grid = document.getElementById('serviciosGrid');
     if (!grid) return;
