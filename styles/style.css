@@ -352,7 +352,14 @@ body {
 }
 
 .footer-logo img {
-    height: 100px;
+    display: grid;
+    height: 30px;
+}
+
+.loguito img {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    height: 70px;
 }
 
 
